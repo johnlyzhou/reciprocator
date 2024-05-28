@@ -1,0 +1,28 @@
+random_seed: 99
+name: "test"
+
+environment:
+  batch_size: 2048
+  max_steps: 32
+
+agents:
+  types:
+    - "reciprocator"
+    - "reciprocator"
+  state_dim: 2
+  n_latent_var: 2
+  lr: 0.005
+  gamma: 0.96
+  K_epochs: 10
+  eps_clip: 0.1
+  entropy_weight: 0.02
+  rnn: False
+
+reciprocator:
+  lr: 0.005
+  reciprocal_reward_weight: 5.0
+  buffer_episodes: 1
+  target_update_period: 3  # TODO: Change this value
+
+logs:
+  checkpoint_interval: 100

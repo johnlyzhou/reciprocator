@@ -1,0 +1,41 @@
+random_seed: 99
+name: "test"
+
+environment:
+  batch_size: 1024 
+  grid_size: 3 
+  max_steps: 32 
+  num_agents: 3 
+
+agents:
+  types:
+    - "reciprocator"
+    - "reciprocator"
+    - "reciprocator"
+  n_latent_var: 32
+  lr: 0.005
+  gamma: 0.99
+  K_epochs: 40
+  eps_clip: 0.15
+  entropy_weight: 0.01
+  rnn: True
+
+reciprocator:
+  reciprocal_reward_type: "petty_payoff"
+  reciprocal_reward_weight: 1.0 
+  normalize_reciprocal_reward: False 
+
+influence:
+  rnn: False
+  n_latent_var: 64
+  lr: 0.01
+  num_initialization_episodes: 2  # Freeze policies at start and let influence model learn
+  target_period: 2  
+  target_epochs: 20
+  target_buffer_size: 3 
+  target_batch_size: 4096
+  num_train_batches: 16
+  parallel_trainers: 1 
+
+logs:
+  checkpoint_interval: 25 
