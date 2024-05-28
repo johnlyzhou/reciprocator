@@ -1,5 +1,5 @@
-# social-reward-shaping
-Social multi-agent reinforcement learning
+# Reciprocator
+Code for the paper "Reciprocal Reward Influence Encourages Cooperation From Self-Interested Agents" (2024).
 
 After cloning this repository, you can install the required dependencies by running:
 ```
